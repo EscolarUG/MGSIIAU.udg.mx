@@ -7,7 +7,7 @@ if(isset($_POST['codigo']) && isset($_POST['password'])){
     $login = login($usuario, $contraseña);
     if($login){
        echo "Bienvenido";
-        header("Location: Portal_SIIAU-UniversidaddeGuadalajara.php");
+        header("Location: Portal_SIIAU-UniversidaddeGuadalajara.html");
         exit;
     }else{
         echo "";
@@ -688,7 +688,7 @@ function login(){
     if(usuario === "226094046"
        && password === "t3cn0l0g1@"){
 
-        window.location.href = "http://localhost/mw.siiau.udg.mx/Portal_SIIAU-UniversidaddeGuadalajara.php";
+        window.location.href = "http://localhost/mw.siiau.udg.mx/Portal_SIIAU-UniversidaddeGuadalajara.html";
 
         return false;
 
