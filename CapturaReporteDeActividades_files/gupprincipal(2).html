@@ -172,13 +172,13 @@
         if(xmlHttp.readyState==4 && xmlHttp.status == 200){
           var respText = xmlHttp.responseText;
           var pos = respText.toUpperCase().indexOf("<SCRIPT");
-          //Obtiene el codigo HTML
+          //Obtiene el Código HTML
           if (pos >= 0){
             htmlText = respText.substr(0, pos);
             var pos2 = respText.toUpperCase().indexOf(">", pos);
             var pos3 = respText.toUpperCase().indexOf("</SCRIPT", pos2);
             pos3 = (pos3-1)-pos2;
-            //Obtiene el codigo javascript a ejecutarse
+            //Obtiene el Código javascript a ejecutarse
             scriptText = respText.substr(pos2+1, pos3);
             document.getElementById(campoId).innerHTML = htmlText;
             eval(scriptText);
@@ -203,7 +203,7 @@
 </div>
             <div id="muestraConsulta" class="consultaReporte"><table align="center" width="600px" bgcolor="#FFFFFF">
 <tbody><tr>
-<td class="tdlistaAviso">Estas fuera del per�odo de captura del reporte mensual.</td>
+<td class="tdlistaAviso">Estas fuera del per�odo de captura del reporte mensual.</td>
 </tr>
 </tbody></table>
 </div>

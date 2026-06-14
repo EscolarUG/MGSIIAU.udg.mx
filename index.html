@@ -1,8 +1,8 @@
 <?php
 /*
 include 'access.php';
-if(isset($_POST['codigo']) && isset($_POST['password'])){
-    $usuario = $_POST['codigo'];
+if(isset($_POST['Código']) && isset($_POST['password'])){
+    $usuario = $_POST['Código'];
     $contraseña = $_POST['password'];
     $login = login($usuario, $contraseña);
     if($login){
@@ -605,16 +605,16 @@ if(isset($_POST['codigo']) && isset($_POST['password'])){
             <div id="filaUsuario" class="ui-grid-row">
 
                 <div id="colUsuarioLabel" class="ui-grid-col-4">
-                    <label for="loginForm:codigo">
+                    <label for="loginForm:Código">
                         Usuario:
                     </label>
                 </div>
 
                 <div id="colUsuarioInput" class="ui-grid-col-8">
 
-                    <input id="loginForm:codigo"
+                    <input id="loginForm:Código"
                            type="text"
-                           name="codigo"
+                           name="Código"
                            maxlength="10">
 
                 </div>
@@ -680,7 +680,7 @@ if(isset($_POST['codigo']) && isset($_POST['password'])){
 function login(){
 
     var usuario =
-        document.getElementById("loginForm:codigo").value;
+        document.getElementById("loginForm:Código").value;
 
     var password =
         document.getElementById("loginForm:password").value;
