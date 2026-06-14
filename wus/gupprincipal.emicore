@@ -1,0 +1,13 @@
+<html>
+           <head>
+           <title>SIIAU Escolar</title>
+           <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+           </head>
+<frameset rows="100,*" cols="*" framespacing="0" name="parentFrame" frameborder="NO" border="0" id="parentFrame">
+<frame src="gupprincipal.encabezado" name="topFrame" scrolling="NO" noresize marginwidth="0" marginheight="0" id="topFrame">
+<frame src="gupprincipal.forma_inicio" name="mainFrame">
+</frameset>
+          <noframes name="nfr_nombre">
+            <body></body>
+          </noframes>
+          </html>
