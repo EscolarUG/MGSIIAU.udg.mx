@@ -1,0 +1,222 @@
+
+<!-- saved from url=(0093)https://siiauescolar.siiau.udg.mx/wal/saeees.peesralum.inicioReporte?pidmp=2055864&majrp=INME -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+    if (window.name == "") {location.href="gspsweb.error"}
+  </script>
+
+
+<title>Captura de reportes de actividades</title>
+<script type="text/javascript" charset="utf-8" src="./jquery.js.descarga"></script>
+</head>
+<body>
+<style>
+      div.encabezado {
+          float: left;
+          width: 100%;
+          height: 12%;
+          background-color: #193970;
+          color: #FFFFFF;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+      }
+
+       div.informacion{
+          float: center;
+          background-color: #FFFFFF;
+          color: #193970;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          width: 100%;
+          height: 50%;
+          overflow: auto;
+      }
+
+      div.consulta{
+          float: left;
+          background-color: #FFFFFF;
+          color: #193970;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          width: 100%;
+          height: 50%;
+          align: center;
+      }
+
+      div.consultaReporte{
+          float: left;
+          background-color: #FFFFFF;
+          color: #193970;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          width: 100%;
+          height: 10%;
+          align: center;
+      }
+
+       div.reporte{
+          float: left;
+          background-color: #FFFFFF;
+          color: #193970;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          width: 100%;
+          height: 49%;
+          align: center;
+      }
+
+        .scroll{
+          overflow: auto;
+          max-height: 260px;
+          height: auto !important;
+          height: 260px;
+        }
+
+        .scroll2{
+          overflow: auto;
+          max-height: 170px;
+          height: auto !important;
+          height: 170px;
+        }
+
+        TH.thazulbeige {
+             font-family:      Arial,helvetica,sans-serif;
+             color:               #FFFFCB;
+             background-color:    #193970;
+             font-weight:         bold;
+             font-size:           12;
+             border-bottom-width: 1px;
+             border-bottom-color: #B0C4DE;
+             border-bottom-style: solid;
+             border-color:        #4682B4;
+           }
+
+         TD.tdlista1 {
+            font-family:       Arial,helvetica,sans-serif;
+            color:             #000080;
+            background-color:  #E1EBF0;
+            font-weight:       normal;
+            font-size:         11;
+           }
+
+          TD.tdlista2 {
+            font-family:       Arial,helvetica,sans-serif;
+            color:             #000080;
+            background-color:  #DAEFF8;
+            font-weight:       normal;
+            font-size:         11;
+           }
+
+           TD.tdlistaAvisoR {
+            font-family:       Arial,helvetica,sans-serif;
+            color:             #000080;
+            font-weight:       normal;
+            font-size:         16;
+           }
+
+           TD.tdlistaAviso {
+            font-family:       Arial,helvetica,sans-serif;
+            color:             #000080;
+            font-weight:       normal;
+            font-size:         18;
+           }
+  </style>
+<style>
+         table.tblSecciones {
+              border-style: solid;
+              border-width:  0.01cm;
+              border-color:  #C0C0C0;
+              background:    #FFFFFF;
+                         padding-left:0px;
+                         vertical-align:bottom;}
+      </style>
+
+  <script type="text/javascript">
+
+  
+  function ajaxInicia() {
+    var xmlHttp;
+
+    if (window.XMLHttpRequest) { // Mozilla, Safari,...
+            xmlHttp = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE
+            try {
+                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+
+        if (!xmlHttp) {
+            alert("Falla :( No es posible crear una instancia XMLHTTP");
+            return false;
+        }
+
+        return xmlHttp;
+
+  }
+  
+
+  function preparaParams(xmlHttp, params){
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHttp.setRequestHeader("Content-length", params.length);
+    xmlHttp.setRequestHeader("Connection", "close");
+    xmlHttp.send(params);
+  }
+
+  function campoAjax(campoId, pagina, params){
+    var xmlHttp = ajaxInicia();
+    if (xmlHttp){
+      xmlHttp.onreadystatechange=function(){
+        if(xmlHttp.readyState==4 && xmlHttp.status == 200){
+          var respText = xmlHttp.responseText;
+          var pos = respText.toUpperCase().indexOf("<SCRIPT");
+          //Obtiene el codigo HTML
+          if (pos >= 0){
+            htmlText = respText.substr(0, pos);
+            var pos2 = respText.toUpperCase().indexOf(">", pos);
+            var pos3 = respText.toUpperCase().indexOf("</SCRIPT", pos2);
+            pos3 = (pos3-1)-pos2;
+            //Obtiene el codigo javascript a ejecutarse
+            scriptText = respText.substr(pos2+1, pos3);
+            document.getElementById(campoId).innerHTML = htmlText;
+            eval(scriptText);
+          }else{
+            document.getElementById(campoId).innerHTML = respText;
+          }
+        }
+      }
+      xmlHttp.open("POST", pagina, false);
+      preparaParams(xmlHttp, params);
+    }else{
+      return false;
+    }
+  }
+
+  </script>
+
+            <div id="encabezadoD" class="encabezado">
+              <h2>Captura de reportes de actividades</h2>
+            </div>
+            <div id="seleccionaInf" class="informacion">
+</div>
+            <div id="muestraConsulta" class="consultaReporte"><table align="center" width="600px" bgcolor="#FFFFFF">
+<tbody><tr>
+<td class="tdlistaAviso">Estas fuera del período de captura del reporte mensual.</td>
+</tr>
+</tbody></table>
+</div>
+            <div id="muestraReportes" class="reporte">
+</div>
+
+          <script>
+             $.ajaxSetup({ cache:false });
+             $("#seleccionaInf").load("saeees.PEESRALUM.clean_div",{});
+             $("#muestraConsulta").load("saeees.PEESRALUM.fecha_limite_div",{});
+             $("#muestraReportes").load("saeees.PEESRALUM.clean_div",{});
+          </script>
+          
+
+
+</body></html>
